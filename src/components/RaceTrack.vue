@@ -22,8 +22,6 @@
         >
           <div class="lane-number">{{ index + 1 }}</div>
           <div class="lane-track">
-            <div class="start-line"></div>
-            <div class="finish-line"></div>
             <div class="horse-name-track">{{ horse.name }}</div>
             <div 
               class="horse-marker"
@@ -46,17 +44,6 @@
             </div>
           </div>
           <div class="horse-condition">{{ horse.condition }}</div>
-        </div>
-      </div>
-      
-      <div class="track-legend">
-        <div class="legend-item">
-          <div class="legend-marker start"></div>
-          <span>Start</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-marker finish"></div>
-          <span>Finish</span>
         </div>
       </div>
     </div>
@@ -135,24 +122,6 @@ const { currentRace, isRacing, getHorsePosition } = useRaceTrack()
   border: 1px solid #ccc;
 }
 
-.start-line {
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  bottom: 3px;
-  width: 3px;
-  background: green;
-}
-
-.finish-line {
-  position: absolute;
-  right: 3px;
-  top: 3px;
-  bottom: 3px;
-  width: 3px;
-  background: red;
-}
-
 .horse-name-track {
   position: absolute;
   top: 50%;
@@ -192,33 +161,5 @@ const { currentRace, isRacing, getHorsePosition } = useRaceTrack()
   font-size: 0.8rem;
   color: #666;
   text-align: center;
-}
-
-.track-legend {
-  display: flex;
-  gap: 1rem;
-  padding: 0.5rem;
-  border-top: 1px solid #ccc;
-  justify-content: center;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.legend-marker {
-  width: 12px;
-  height: 12px;
-}
-
-.legend-marker.start {
-  background: green;
-}
-
-.legend-marker.finish {
-  background: red;
 }
 </style>

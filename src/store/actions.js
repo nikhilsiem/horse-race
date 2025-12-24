@@ -267,7 +267,7 @@ export default {
         // Best horse (condition 100) finishes at baseDuration
         // Worst horse (condition 1) finishes at baseDuration * 1.5
         const conditionFactor = horse.condition / 100 // 0.01 to 1.0
-        const finishTime = baseDuration + (baseDuration * 0.5 * (1 - conditionFactor))
+        const finishTime = baseDuration + (baseDuration * (1 - conditionFactor))
         
         return {
           horse,
@@ -476,7 +476,6 @@ export default {
     }
   },
 
-  // Reset entire game state for new game with error handling
   resetGameState({ commit }) {
     try {
       commit('SET_HORSES', [])
